@@ -4,7 +4,7 @@ class Solution {
         int mid = n / 2;
         int count = 0;
         
-        // Add 1 for vowels in first half, subtract 1 for vowels in second half
+        
         for (int i = 0; i < mid; i++) {
             if (isVowel(s.charAt(i))) {
                 count++;
