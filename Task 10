@@ -16,19 +16,17 @@ public class Solution {
             int bottom = m - layer - 1;
             int right = n - layer - 1;
 
-            // top row
+            
             for (int j = left; j <= right; j++)
                 elements.add(matrix.get(top).get(j));
 
-            // right column
+    
             for (int i = top + 1; i < bottom; i++)
                 elements.add(matrix.get(i).get(right));
 
-            // bottom row
             for (int j = right; j >= left; j--)
                 elements.add(matrix.get(bottom).get(j));
 
-            // left column
             for (int i = bottom - 1; i > top; i--)
                 elements.add(matrix.get(i).get(left));
 
@@ -39,24 +37,23 @@ public class Solution {
 
             int idx = 0;
 
-            // put back top row
+            
             for (int j = left; j <= right; j++)
                 matrix.get(top).set(j, elements.get(idx++));
 
-            // put back right column
+            
             for (int i = top + 1; i < bottom; i++)
                 matrix.get(i).set(right, elements.get(idx++));
 
-            // put back bottom row
             for (int j = right; j >= left; j--)
                 matrix.get(bottom).set(j, elements.get(idx++));
 
-            // put back left column
+          
             for (int i = bottom - 1; i > top; i--)
                 matrix.get(i).set(left, elements.get(idx++));
         }
 
-        // print result
+        
         for (List<Integer> row : matrix) {
             for (int val : row) {
                 System.out.print(val + " ");
